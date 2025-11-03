@@ -3,4 +3,4 @@ services:
     name: cloudcomputing-php
     env: docker
     plan: free
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: Dockerfile
