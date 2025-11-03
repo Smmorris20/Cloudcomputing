@@ -1,14 +1,10 @@
-# Use official PHP CLI image
-FROM php:8.2-cli
+# Use official PHP Apache image
+FROM php:8.2-apache
 
-# Set working directory inside the container
-WORKDIR /app
+# Copy all files into the Apache web root
+COPY . /var/www/html/
 
-# Copy all files into the container
-COPY . /app
+# Expose default HTTP port
+EXPOSE 80
 
-# Expose the port Render expects
-EXPOSE 10000
-
-# Start PHP built-in server
-CMD ["php", "-S", "0.0.0.0:10000", "-t", "."]
+# Start Apache in the foreground (default CMD in image)
