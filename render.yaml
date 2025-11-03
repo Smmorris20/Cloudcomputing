@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: cloudcomputing-php
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
